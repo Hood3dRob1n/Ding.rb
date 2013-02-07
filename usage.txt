@@ -1,18 +1,16 @@
-Usage:./ding2.rb [OPTIONS]
+Ding-2: A Faster Better Bing Dork Scanner
 
-EX: ./ding2.rb -d ".php?id=" 
-EX: ./ding2.rb -d ".php?id=" -T
-EX: ./ding2.rb -d ".php?id=" -c EDU -X http://127.0.0.1:8080
-EX: ./ding2.rb --dork ".php?id=" -i 83.149.121.142
-EX: ./ding2.rb --dork ".php?id=" -i 83.149.121.142 --tor
-EX: ./ding2.rb -f ~/dorks/lfi.lst --country-code AU --proxy http://somecoolsite.com:8080
-EX: ./ding2.rb -f ~/dorks/sharedhosting.lst --ip-address 83.223.106.11
-EX: ./ding2.rb --file /home/hood3drob1n/Desktop/ding/dorks/php-mini.lst
-EX: ./ding2.rb -s anko.nl
-EX: ./ding2.rb -s 83.223.106.11
-EX: ./ding2.rb --shared-hosting lavandula.com.au --tor
-EX: ./ding2.rb --shared-hosting http://holidayhomesindonegal.com
-EX: ./ding2.rb -f dorks/german.lst --country-code DE --proxy http://somecoolsite.com:8080 -U proxy_guest -P proxy_guest_pass
+Coded with Ruby 1.9 in mind, so if your not using 1.9 I make no guarantees!
+
+Many updates since my previously publicly released bash version (MANY! MANY!)
+
+Required Gems:
+colorize => to spice things up
+hpricot => for parsing html
+nokogiri => more parsing fun
+tor_requests => cause some people like tor
+
+Usage:./ding2.rb [OPTIONS]
 
 Options: 
     -d, --dork <DORK>                
@@ -50,4 +48,21 @@ Options:
 	Remove duplicate entries from Ding results files
     -h, --help                       
 	Help Menu
+
+EXAMPLES:
+EX: ./ding2.rb -d ".php?id=" 
+EX: ./ding2.rb -d ".php?id=" -T
+EX: ./ding2.rb -d ".php?id=" -T -L 5
+EX: ./ding2.rb -d ".php?id=" -c EDU -X http://127.0.0.1:8080
+EX: ./ding2.rb -d ".php?id=" -c EDU -X http://127.0.0.1:8080 -L 2
+EX: ./ding2.rb --dork ".php?id=" -i 83.149.121.142 -L 1
+EX: ./ding2.rb --dork ".php?id=" -i 83.149.121.142 --tor
+EX: ./ding2.rb -f ~/dorks/lfi.lst --country-code AU --proxy http://somecoolsite.com:8080
+EX: ./ding2.rb -f ~/dorks/sharedhosting.lst --ip-address 83.223.106.11 -L 5
+EX: ./ding2.rb --file /home/hood3drob1n/Desktop/ding/dorks/php-mini.lst -L 4
+EX: ./ding2.rb -s anko.nl
+EX: ./ding2.rb -s 83.223.106.11
+EX: ./ding2.rb --shared-hosting lavandula.com.au --tor
+EX: ./ding2.rb --shared-hosting http://holidayhomesindonegal.com
+EX: ./ding2.rb -f dorks/german.lst --country-code DE --proxy http://somecoolsite.com:8080 -U proxy_guest -P proxy_guest_pass
 
