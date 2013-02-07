@@ -520,6 +520,8 @@ class InjectorTest
 				puts "\t=> Problem communicating with site, host unreachable".red + "!".white
 			rescue EOFError
 				puts "\t=> Problem communicating with site".red + "....".white
+			rescue Errno::EINVAL => e
+				puts "\t=> #{e}".yellow
 			rescue SocketError
 				puts "\t=> Problem connecting to site".red + "....".white
 			rescue OpenSSL::SSL::SSLError
@@ -895,6 +897,8 @@ class InjectorTest
 			rescue Errno::ENOENT
 				puts "\t=> Jacked URL parsing due to no value with parameter, sorry".red + "....".white
 				next
+			rescue Errno::EINVAL => e
+				puts "\t=> #{e}".yellow
 			rescue Errno::ECONNRESET
 				puts "\t=> Problem connecting to site".red + "....".white
 			rescue RuntimeError => e
